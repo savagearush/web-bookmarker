@@ -2,8 +2,8 @@ import React from "react";
 import Form from "./common/form";
 import Joi from "joi-browser";
 import axios from "axios";
-// const API_URL = "https://savage-bookmarker-api.herokuapp.com/";
-const API_URL = "http://localhost:5000/";
+const API_URL = "https://savage-bookmarker-api.herokuapp.com/";
+// const API_URL = "http://localhost:5000/";
 class LoginForm extends Form {
   schema = Joi.object({
     email: Joi.string().required(),
