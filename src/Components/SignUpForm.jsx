@@ -19,7 +19,6 @@ class SignUpForm extends Form {
 
     try {
       // automatically check for Success Response 2xx
-
       const response = await axios.post(API_URL + "users/register", data);
       form.reset();
       localStorage.setItem("token", response.headers["x-auth-token"]);

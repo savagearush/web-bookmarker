@@ -12,7 +12,6 @@ class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     const { name } = e.target;
     const status = { ...this.state.status };
 
@@ -61,6 +60,22 @@ class Form extends Component {
       status.message = errors;
       this.setState({ status });
     }
+
+    if (name === "reset-password-form") {
+      const email = pick(this.state.data, ["email"]);
+      this.doSubmit(email);
+    }
+
+    if (name === "change-password-form") {
+      const { new_password } = this.state.data;
+      if (new_password !== null) {
+        this.changePassword(new_password);
+        return;
+      }
+      status.type = "danger";
+      status.message = "Enter the password";
+      this.setState({ status });
+    }
   };
 
   validate = (data) => {
@@ -76,8 +91,7 @@ class Form extends Component {
     this.setState({ data });
   };
 
-  // Components
-
+  // Web-Bookmarker Components
   renderAlert = ({ type, message }) => {
     return <Alert type={type} message={message} />;
   };

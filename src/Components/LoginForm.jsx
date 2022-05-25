@@ -2,8 +2,8 @@ import React from "react";
 import Form from "./common/form";
 import Joi from "joi-browser";
 import axios from "axios";
-const API_URL = "https://savage-bookmarker-api.herokuapp.com/";
-// const API_URL = "http://localhost:3000/";
+// const API_URL = "https://savage-bookmarker-api.herokuapp.com/";
+const API_URL = "http://localhost:5000/";
 class LoginForm extends Form {
   schema = Joi.object({
     email: Joi.string().required(),
@@ -44,7 +44,7 @@ class LoginForm extends Form {
           style={style}
           onSubmit={this.handleSubmit}
         >
-          <h1 class="h3 mb-3 fw-normal mb-5">Login to your Account</h1>
+          <h1 className="h3 mb-3 fw-normal mb-5">Login to your Account</h1>
           {this.renderInput({ type: "email", label: "Email ID", id: "email" })}
           {this.renderInput({
             type: "password",
@@ -56,6 +56,11 @@ class LoginForm extends Form {
             label: "Login",
             id: "login-btn",
           })}
+          <div>
+            <a href="/reset-password" className="">
+              Forgot Password ?
+            </a>
+          </div>
           <p class="mt-5 mb-3 text-muted">&copy; 2019–2021</p>
           {this.state.status !== ""
             ? this.renderAlert({
