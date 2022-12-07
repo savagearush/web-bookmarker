@@ -2,7 +2,7 @@ import React from "react";
 import Form from "./common/form";
 import axios from "axios";
 import Joi from "joi-browser";
-const API_URL = "https://savage-bookmarker-api.herokuapp.com/";
+const API_URL = "https://gorgeous-biscuit-16325b.netlify.app/";
 // const API_URL = "http://localhost:3000/";
 
 class SignUpForm extends Form {
