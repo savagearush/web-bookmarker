@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 import form from "./common/form";
 import { toast, ToastContainer } from "react-toastify";
-const API_URL = "https://gorgeous-biscuit-16325b.netlify.app/";
+// const API_URL = "https://gorgeous-biscuit-16325b.netlify.app/";
+const API_URL = "http://localhost:5000/";
 
 class BookmarkList extends form {
   state = {

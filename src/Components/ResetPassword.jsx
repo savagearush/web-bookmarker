@@ -1,8 +1,8 @@
 import React from "react";
 import Form from "./common/form";
 import axios from "axios";
-const API_URL = "https://gorgeous-biscuit-16325b.netlify.app/";
-// const API_URL = "http://localhost:5000/";
+// const API_URL = "https://gorgeous-biscuit-16325b.netlify.app/";
+const API_URL = "http://localhost:5000/";
 
 // check if Reset User Token Defined
 const queryString = window.location.search;
