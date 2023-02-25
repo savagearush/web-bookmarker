@@ -13,7 +13,13 @@ export default class ResetPassword extends Form {
   doSubmit = async (email) => {
     const status = { ...this.state.status };
     try {
-      const response = await axios.post(API_URL + "resetpassword", email);
+      const response = await axios.post(API_URL + "resetpassword", email, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
       status.type = response.data.type;
       status.message = response.data.message;
       this.setState({ status });

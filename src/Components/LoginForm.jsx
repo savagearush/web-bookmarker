@@ -14,7 +14,13 @@ class LoginForm extends Form {
     const status = { ...this.state.status };
     try {
       // automatically check for Success Response 2xx
-      const response = await axios.post(API_URL + "auth", data);
+      const response = await axios.post(API_URL + "auth", data, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
       localStorage.setItem("token", response.headers["x-auth-token"]);
       status.type = response.data.type;
       status.message = response.data.message;

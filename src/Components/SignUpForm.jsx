@@ -3,7 +3,7 @@ import Form from "./common/form";
 import axios from "axios";
 import Joi from "joi-browser";
 const API_URL = "https://gorgeous-biscuit-16325b.netlify.app/";
-// const API_URL = "http://localhost:3000/";
+// const API_URL = "http://localhost:5000/";
 
 class SignUpForm extends Form {
   schema = Joi.object({
@@ -19,7 +19,13 @@ class SignUpForm extends Form {
 
     try {
       // automatically check for Success Response 2xx
-      const response = await axios.post(API_URL + "users/register", data);
+      const response = await axios.post(API_URL + "users/register", data, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
       form.reset();
       localStorage.setItem("token", response.headers["x-auth-token"]);
       status.type = response.data.type;
