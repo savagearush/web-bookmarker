@@ -2,8 +2,8 @@ import React from "react";
 import Form from "./common/form";
 import Joi from "joi-browser";
 import axios from "axios";
-// const API_URL = "https://gorgeous-biscuit-16325b.netlify.app/";
-const API_URL = "http://localhost:5000/";
+const API_URL = "https://gorgeous-biscuit-16325b.netlify.app/";
+// const API_URL = "http://localhost:5000/";
 
 class BookmarkForm extends Form {
   schema = Joi.object({
